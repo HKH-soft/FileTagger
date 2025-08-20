@@ -1,9 +1,9 @@
 package filetagger.models;
 
 public record Config(
-    Integer fontSize 
+    Integer fontSize
 ) {
-    // if(fontSize == null){
-    //     fontSize = 
-    // }
+    public Config(){
+        this(12);
+    }
 }

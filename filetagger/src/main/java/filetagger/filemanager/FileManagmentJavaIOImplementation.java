@@ -8,6 +8,7 @@ import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.List;
+
 import com.google.gson.Gson;
 
 
@@ -15,12 +16,12 @@ public class FileManagmentJavaIOImplementation implements FileManagmentInteface{
     @Override
     public List<String> listAllFiles(Path path) throws IOException {
         List<String> nameList = new ArrayList<>();
-         try (DirectoryStream<Path> stream = Files.newDirectoryStream(path)) 
+        try (DirectoryStream<Path> stream = Files.newDirectoryStream(path)) 
         {
             for (Path entry : stream) {
                     nameList.add(entry.getFileName().toString());
-                }
             }
+        }
             return nameList;
     }
 
